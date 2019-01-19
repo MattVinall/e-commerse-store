@@ -10,4 +10,4 @@ class Default extends Component {
     }
 }
 
-export default Details;
+export default Default;

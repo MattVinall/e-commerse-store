@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Product from './Product'
 
 class Product extends Component {
     render() {
@@ -11,4 +10,4 @@ class Product extends Component {
     }
 }
 
-export default ProductList;
+export default Product;

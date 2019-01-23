@@ -16,24 +16,36 @@ class ProductProvider extends Component {
         this.setProducts();
     }
 
+    // looping through an array of objects and copy values - not referencing them as we don't want to alter the values in the data js file.
     setProducts = () => {
+        // set tempProducts to empty array
         let tempProducts = [];
         storeProducts.forEach(item => {
+            // destructure object item and store it into a variable 
             const singleItem = { ...item };
+            // reassign tempProducts to be an array of objects - a copy of the products from data js
             tempProducts = [...tempProducts, singleItem];
-            console.log(tempProducts);
         })
+        // set state to be new tempProducts 
         this.setState(() => {
             return { products: tempProducts }
         })
     }
 
-    handleDetail = () => {
-        console.log('hello from detail');
+    getItem = (id) => {
+        const product = this.state.products.find(item => item.id === id);
+        return product;
+    }
+
+    handleDetail = (id) => {
+        const product = this.getItem();
+        this.setState(() => {
+            return { detailProduct: product }
+        })
     };
 
-    addToCart = () => {
-        console.log('hello from add to cart');
+    addToCart = (id) => {
+        console.log(`you clicked me with the id of ${id}`);
     }
     render() {
         return (

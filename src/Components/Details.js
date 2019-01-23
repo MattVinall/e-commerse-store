@@ -8,7 +8,6 @@ class Details extends Component {
         return (
             <ProductConsumer>
                 {(value) => {
-
                     const { id, company, product, title, info, price, inCart, img } = value.detailProduct;
                     return (
                         <div className="container py-5">
